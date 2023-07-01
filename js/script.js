@@ -74,6 +74,7 @@ var Portos = L.geoJSON(portos, {
 		onEachFeature: function (feature,layer) {
 			layer.bindPopup(feature.properties.Nome+'</p>'+'Total de fretes: '+feature.properties.TotFretes)
 		}
+
 }).addTo(map);
 
 // Ajustar a exibição do mapa para se ajustar à camada de portos
