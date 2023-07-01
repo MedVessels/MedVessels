@@ -38,7 +38,19 @@ var baseLayers = {
 };
 
 L.control.layers(baseLayers).addTo(map);
-L.geoJSON(portos).addTo(map);
+// adicionar a camada portos
+var addPortos = L.geoJSON(portos, {
+	pointToLayer: function (feature, latlng) {
+	return L.circleMarker(latlng, {
+		radius: 5,
+		fillColor: "red",
+		color: "#000",
+		weight: 1,
+		opacity: 1,
+		fillOpacity: 0.8
+		});
+		},
+	}).addTo(map);
 
   
 
